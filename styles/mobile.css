@@ -1,0 +1,36 @@
+/* xs */
+@media (max-width: 767px) {
+  .scroller {
+    grid-auto-flow: row;
+    grid-auto-columns: 37%;
+  }
+}
+/* XS Portrait */
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+  .page-header {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    font-weight: 900;
+    font-size: large;
+    color: #fff;
+    position: fixed;
+    z-index: 1;
+    right: 10px;
+  }
+  .scroller {
+    display: block;
+    padding-top: 0px;
+    height: auto;
+  }
+  .scroller .elemnt video {
+    width: 100%;
+  }
+  .scrollIndicator {
+    display: none;
+  }
+}/*# sourceMappingURL=mobile.css.map */

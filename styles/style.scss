@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import "./variables.scss";
+
+html,body{
+    height:100%;
+    display:block;
+}
+
+body{
+    background-color: $color-black;
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+}
+
+
+.page-header{
+    color: $color-white;
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    nav img{
+        width: 100px;
+        margin-left: 30px
+    };
+    nav ul{
+        margin-left: auto;
+        margin-right: 30px
+    };
+    nav ul li{
+        display: inline-block;
+        margin: 10px;
+        font-weight: 400;
+        line-height: 27px;
+        font-size: 15px;
+        position: relative;
+        cursor: pointer;
+        &::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 0%;
+            background-color: $color-white;
+            transition: ease-in-out .3s;
+        };
+        &:hover::after{
+            width: 100%;
+        };
+        &.active::after{
+            width: 100%;
+        }
+    }
+}
+
+
+.mobile-menu, .mobileMenu{
+    display: none;
+}
+
+
+.scroller{
+    display: grid;
+    height: calc(100vh - 180px);
+    grid-auto-flow: column;
+    grid-auto-columns: 37%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-top: 100px;
+    cursor: pointer;
+    .elemnt{
+        video{
+            width: 100%;
+            transition: ease-in .3s;
+            opacity: .8;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+.scrollIndicator{
+    width: 30%;
+    height: 2px;
+    background-color: #333;
+    border-radius: 1px;
+    z-index: 5;
+    margin: -250px auto 0;
+    span{
+        display: block;
+        // width: 20%;
+        height: 2px;
+        background-color: #999;
+        transition: all .3s;
+    }
+}
+
+
+@import "./mobile.scss";

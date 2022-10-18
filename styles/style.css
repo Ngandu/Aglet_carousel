@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html, body {
+  height: 100%;
+  display: block;
+}
+
+body {
+  background-color: #000;
+  font-family: "Roboto", sans-serif;
+  overflow-y: hidden;
+}
+
+.page-header {
+  color: #fff;
+}
+.page-header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.page-header nav img {
+  width: 100px;
+  margin-left: 30px;
+}
+.page-header nav ul {
+  margin-left: auto;
+  margin-right: 30px;
+}
+.page-header nav ul li {
+  display: inline-block;
+  margin: 10px;
+  font-weight: 400;
+  line-height: 27px;
+  font-size: 15px;
+  position: relative;
+  cursor: pointer;
+}
+.page-header nav ul li::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background-color: #fff;
+  transition: ease-in-out 0.3s;
+}
+.page-header nav ul li:hover::after {
+  width: 100%;
+}
+.page-header nav ul li.active::after {
+  width: 100%;
+}
+
+.mobile-menu, .mobileMenu {
+  display: none;
+}
+
+.scroller {
+  display: grid;
+  height: calc(100vh - 180px);
+  grid-auto-flow: column;
+  grid-auto-columns: 37%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  padding-top: 100px;
+  cursor: pointer;
+}
+.scroller .elemnt video {
+  width: 100%;
+  transition: ease-in 0.3s;
+  opacity: 0.8;
+}
+.scroller .elemnt video:hover {
+  opacity: 1;
+}
+
+.scrollIndicator {
+  width: 30%;
+  height: 2px;
+  background-color: #333;
+  border-radius: 1px;
+  z-index: 5;
+  margin: -250px auto 0;
+}
+.scrollIndicator span {
+  display: block;
+  height: 2px;
+  background-color: #999;
+  transition: all 0.3s;
+}
+
+/* xs */
+@media (max-width: 767px) {
+  .scroller {
+    grid-auto-flow: row;
+    grid-auto-columns: 37%;
+  }
+}
+/* XS Portrait */
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+  }
+  .page-header {
+    display: none;
+  }
+  .mobile-menu {
+    display: block;
+    font-weight: 900;
+    font-size: large;
+    color: #fff;
+    position: fixed;
+    z-index: 1;
+    right: 10px;
+  }
+  .mobileMenu {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: absolute;
+    z-index: 5;
+    margin-right: -100vw;
+  }
+  .scroller {
+    display: block;
+    padding-top: 0px;
+    height: auto;
+  }
+  .scroller .elemnt video {
+    width: 100%;
+  }
+  .scrollIndicator {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
