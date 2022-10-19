@@ -13,7 +13,16 @@ body{
     overflow-y: hidden;
 }
 
+.fadein {
+    opacity: 0;
+    -moz-transition: opacity 1.5s;
+    -webkit-transition: opacity 1.5s;
+    -o-transition: opacity 1.5s;
+    transition: opacity 1.5s;
+}
 
+
+// navigation style
 .page-header{
     color: $color-white;
     nav{
@@ -28,7 +37,8 @@ body{
     nav ul{
         margin-left: auto;
         margin-right: 30px
-    };
+    }; 
+
     nav ul li{
         display: inline-block;
         margin: 10px;
@@ -53,15 +63,19 @@ body{
         &.active::after{
             width: 100%;
         }
+        & > a{
+            text-decoration: none;
+            color: $color-white;
+        }
     }
 }
 
-
+// hide the mobile items when desktop
 .mobile-menu, .mobileMenu{
     display: none;
 }
 
-
+// Scroller / carousel container
 .scroller{
     display: grid;
     height: calc(100vh - 180px);
@@ -84,6 +98,7 @@ body{
 }
 
 
+// Scroll indicator style
 .scrollIndicator{
     width: 30%;
     height: 2px;
@@ -93,7 +108,6 @@ body{
     margin: -250px auto 0;
     span{
         display: block;
-        // width: 20%;
         height: 2px;
         background-color: #999;
         transition: all .3s;
@@ -101,4 +115,42 @@ body{
 }
 
 
+// Contact page
+.container{
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+
+    & > img{
+        width: 600px;
+        display: inline-block
+    };
+    & > div{
+        color: $color-lightgrey;
+        padding-left: 100px;
+        & h1{
+            margin-top: 15vh;
+            font-size: 18em;
+            margin-left: -370px;
+            color: $color-darkgrey;
+            margin-bottom: 0
+        };
+        & .detail{
+            margin-top: -40px
+        };
+        & .detail > p{
+            margin-top: 25px
+        };
+        & span{
+            color: $color-white
+        };
+        & i{
+            margin-left: 20px
+        }
+        
+    }
+}
+
+// Import Mobile style
 @import "./mobile.scss";

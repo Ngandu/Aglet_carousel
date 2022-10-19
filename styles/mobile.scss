@@ -10,6 +10,7 @@
 }
 
 /* XS Portrait */
+// Style change sfor mobile
 
 @media (max-width: 480px) {
 
@@ -17,34 +18,69 @@
         margin: 0;
     }
 
+    // Hide desktop menu
     .page-header{
         display: none;
     }
-
+    // show the mobile navigation
     .mobile-menu{
         display: block;
         font-weight: 900;
         font-size: large;
-        color: $color-white;
-        position: fixed;
-        z-index: 1;
-        right: 10px;
-    }
-
-    .mobileMenu{
-        display: block;
-        width: 100%;
-        height: 100vh;
-        background-color: $color-white;
         position: absolute;
+        z-index: 6;
+        right: 10px;
+        top: 30px
+    }
+    // show mobile mesu / sidebar
+    .mobileMenu{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100%;
+        background-color: $color-white;
         z-index: 5;
-        margin-right: -100vw;
+        right: -120%;
+        transition: all 0.4s;
+        // padding-top: 30vh;
+        & >.menuItems{
+            margin-top: auto
+        };
+        & >.menuItems a{
+            font-size: 30px;
+            font-weight: 900;
+            color: $color-black;
+            display: block;
+            line-height: 2em;
+            text-decoration: none;
+            padding-left: 130px;
+            transition: all 1s;
+
+        }
+        &.open{
+            right: 0; 
+            & > .menuItems a{
+                padding-left: 30px;
+            }
+        };
+        & > .menuBottom {
+            margin: 25px;
+            margin-top: auto
+        };
+        & > .menuBottom p{
+            line-height: 10px
+        };
+        & > .menuBottom a{
+            color: $color-black;
+        }
     }
 
+    // Scroller reset for mobile
     .scroller{
         display: block;
         padding-top: 0px;
-        height: auto;
+        height: 100vh;
         .elemnt{
             video{
                 width: 100%;
@@ -52,10 +88,46 @@
         }
     }
 
+    // hide indicator on mobile
     .scrollIndicator{
         display: none;
     }
 
+
+    // Contact page
+.container{
+    width: 100%;
+    display: block;
+    & > img{
+        width: 100%;
+    };
+    & > div{
+        display: block;
+        color: $color-lightgrey;
+        padding-left: 20px;
+        background-color: $color-black;
+        margin-top: -100px;
+        & h1{
+            font-size: 10em;
+            margin-bottom: 0;
+            margin-left: 0;
+            margin-top: -40px
+        };
+        & .detail{
+            margin-top: 0px
+        };
+        & .detail > p{
+            margin-top: 25px;
+            padding-left: 20px
+        };
+        & span{
+            color: $color-white
+        };
+        & i{
+            margin-left: 20px
+        }
+    }
+}
 
 }
 
